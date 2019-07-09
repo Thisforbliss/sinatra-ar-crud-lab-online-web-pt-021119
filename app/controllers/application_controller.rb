@@ -25,9 +25,10 @@ class ApplicationController < Sinatra::Base
   
   post '/articles' do
     @content = Article.create(title: params[:title], content: params[:content])
-    erb :"/articles/#{@content.id}"
+    redirect to "/articles/#{@content.id}"
   end
   
+  #next thing you have to do is create a show page for the post/'articles'
   
   
 end
